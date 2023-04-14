@@ -1,0 +1,25 @@
+# Create a Function which can take any number of numerical arguments, calculate Arithmetic Mean, Geometric Mean and Harmonic Mean
+
+def mean(*nums): 
+    """
+    This will find Arithmatic Mean, Geometric Mean and Harmonic Mean of given numbers
+    """
+    
+    num_of_elements = len(nums)
+    product = 1
+    sum_of_reciprocals = 0
+    
+    for i in nums:
+        product *= i
+        sum_of_reciprocals += (1/i)
+        
+    # Calculating Arithmatic Mean                      
+    AM = sum((nums))/num_of_elements          # AM = n1 + n2 + n3 + n4 + ..... / n
+    # Calculating Geometric Mean
+    GM = product**(1/num_of_elements)         # GM = n1 * n2 * n3 * n4 * ..... / n
+    # Calculating Harmonic Mean
+    HM = num_of_elements/sum_of_reciprocals   # HM = n / (1/n1 + 1/n2 + 1/n3 + 1/n4 + ....) 
+                          
+    print(f'Arithmetic Mean = {AM}')
+    print(f'Geometric Mean = {GM}')
+    print(f'Harmonic Mean = {HM}')
